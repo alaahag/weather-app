@@ -1,1 +1,1 @@
-# weather-app
+# weather-app with all extensions
