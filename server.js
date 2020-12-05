@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const URI = process.env.MONGODB_URI || 'mongodb://localhost/WeatherAppDB';
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
