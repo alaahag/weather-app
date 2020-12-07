@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <title>Shared Weather | by: MasterX</title>
+    <link rel="icon" href="icon.png" type="image/icon type">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Acme&display=swap">
+    <link rel="stylesheet" href="/css/ext/font-awesome-all.min.css" type="text/css">
+    <link rel="StyleSheet" href="/css/ext/notify.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <script src="/moment/min/moment.min.js"></script>
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/handlebars/dist/handlebars.min.js"></script>
+    <script src="/js/ext/notify.min.js"></script>
+    <script src="/js/model.js"></script>
+    <script src="/js/renderer.js"></script>
+</head>
+
+<body>
+    <form onsubmit="return false;">
+        <div class="container">
+            <div class="header">
+                <input type="text" id="txt_search" placeholder="Search for a location" required>
+                <button id="btn_my_location" title="Search by my location" type="button"><i class="fas fa-location-arrow"></i></button>
+                <button id="btn_search" type="submit">Search</button>
+            </div>
+            <div class="temp_content"></div>
+            <div class="content"></div>
+        </div>
+    </form>
+
+    <script id="weatherAppData-template" type="text/x-handlebars-template">
+        {{#if this.length}}
+            {{#each this}}
+                    <figure data-id='{{toJSON this}}' data-name='{{name}}' class="card">
+                        <div class="refresh">
+                            <a href="javascript:;" onclick="refreshData(this)" class="refresh_data" title="Refresh weather's data"><i class="fas fa-sync-alt"></i></a>
+                        </div>
+                        <div class="update">
+                            {{updatedAt}}
+                        </div>
+                        <div class="temp">
+                            <b>{{temperature}} C</b>
+                        </div>
+                        <div class="name">
+                            <div>{{name}}</div>
+                        </div>
+                        <div class="pic">
+                            <img src="http://openweathermap.org/img/wn/{{conditionPic}}@2x.png" class="image" title="{{condition}}" alt="{{condition}}">
+                        </div>
+                        <div class="desc">
+                            <div>{{condition}}</div>
+                        </div>
+                        <div class="add_remove">
+                            {{#if _id}}
+                            <a href="javascript:;" onclick="removeData(this)" title="Remove from favorites"><i class="fas fa-minus-square icon_delete"></i></a>
+                            {{else}}
+                            <a href="javascript:;" onclick="saveData(this)" title="Add to favorites"><i class="fas fa-plus-circle icon_add"></i></a>
+                            {{/if}}
+                        </div>
+                    </figure>
+            {{/each}}
+        {{/if}}
+    </script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

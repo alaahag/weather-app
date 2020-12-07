@@ -1,0 +1,190 @@
+body {
+    background-color: grey;
+    margin: 1px;
+}
+
+
+@media only screen and (min-width: 904px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: max-content 1fr;
+        grid-template-areas:
+        "header header"
+        "temp_content content";
+    }
+
+    .content {
+        grid-area: content;
+    }
+
+    .temp_content {
+        grid-area: temp_content;
+    }
+}
+
+@media only screen and (max-width: 903px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        grid-template-areas:
+        "header"
+        ".";
+    }
+
+    .content {
+        display: block;
+    }
+
+    .temp_content {
+        display: block;
+    }
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 7fr 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "txt my_location_btn search_btn";
+}
+
+.refresh_data {
+    color: rgb(202, 202, 201);
+    cursor: pointer;
+    font-size: 120%;
+}
+
+.refresh_data:hover {
+    color: #fc5c65;
+}
+
+#btn_my_location {
+    font-size: 140%;
+    padding-left: 10px;
+    padding-right: 10px;
+    grid-area: my_location_btn;
+}
+
+#btn_my_location, #btn_search {
+    box-shadow: 4px 4px 8px #000000;
+    cursor: pointer;
+    color: ghostwhite;
+    border-color:white;
+    background-color: darkslategray;
+    outline: none;
+}
+
+#btn_search {
+    font-family: 'Acme', sans-serif;
+    letter-spacing: 2px;
+    font-size: 130%;
+    text-transform: uppercase;
+    grid-area: search_btn
+}
+
+#btn_search:hover, #btn_my_location:hover {
+    background-color: forestgreen;
+}
+
+#txt_search {
+    padding: 15px;
+    font-size: 20px;
+    border-style: solid none;
+    box-shadow: 4px 3px 8px #000000;
+    font-family: 'Acme', sans-serif;
+    border-color:white;
+    outline: none;
+    grid-area: txt;
+}
+
+.card {
+    box-shadow: 5px 5px 5px black;
+    font-size: 170%;
+    font-family: 'Acme', sans-serif;
+    border: 1px solid #fc5c65;
+    text-align: center;
+    background-color: #042d33;
+    border-radius: 5px 5px;
+    text-align: center;
+    align-items: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 14px;
+    display: grid;
+    grid-template-columns: 12% 55% 33%;
+    grid-template-rows: 0.3fr 1fr 0.7fr;
+    grid-template-areas:
+      "refresh update pic"
+      ". temp pic"
+      "add_remove name desc";
+}
+
+.update {
+    grid-area: update;
+    font-size: 90%;
+    color: darkcyan;
+    font-style: oblique;
+}
+
+.refresh {
+    grid-area: refresh;
+    font-size: 90%;
+    padding-top: 9px;
+}
+
+.add_remove {
+    grid-area: add_remove;
+    font-size: 90%;
+    align-self: end;
+    padding-bottom: 8px;
+}
+
+.temp {
+    grid-area: temp;
+    font-size: 150%;
+    color: rgb(142, 207, 37);
+}
+
+.name {
+    grid-area: name;
+    font-size: 150%;
+    color: rgb(151, 191, 223);
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 8px;
+}
+
+.pic {
+    grid-area: pic;
+    align-self: end;
+}
+
+.desc {
+    grid-area: desc;
+    color: slategray;
+}
+
+.image {
+    height: 4em;
+}
+
+.icon_add, .icon_delete {
+    font-size: 150%;
+}
+
+.icon_add:hover, .icon_delete:hover {
+    font-size: 160%;
+}
+
+.icon_add {
+    color: rgb(223, 245, 164);
+}
+
+.icon_delete {
+    color: coral;
+}

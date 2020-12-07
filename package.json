@@ -1,0 +1,23 @@
+{
+  "name": "shared-weather",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "review": "node node_modules/elevation-pr/index.js"
+  },
+  "author": "MasterX",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "elevation-pr": "^2.1.0",
+    "express": "^4.17.1",
+    "handlebars": "^4.7.6",
+    "jquery": "^3.5.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.16"
+  },
+  "devDependencies": {},
+  "description": ""
+}
