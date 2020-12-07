@@ -59,8 +59,7 @@ const addTempCityHelper = function(tempCity){
             renderer.renderData(tempraManager.tempCityData, tempContent);
         }
     }
-    else
-    {
+    else{
         Notify.alert({
             title : 'Invalid Request',
             html : `Invalid location!`,

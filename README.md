@@ -1,1 +1,1 @@
-# weather-app with all extensions
+# Shared-Weather with all extensions (by MasterX)

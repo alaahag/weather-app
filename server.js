@@ -12,9 +12,13 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/', api);
 
-mongoose.set('useCreateIndex', true);
-mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
-
-app.listen(PORT, function(){
-    console.log(`server is running on port: ${PORT}`);
-});
+mongoose.connect(URI,
+    {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true, connectTimeoutMS: 5000, serverSelectionTimeoutMS: 5000})
+    .then(function(){
+        app.listen(PORT, function(){
+            console.log(`Server is up and running on port: ${PORT}`);
+        });
+    })
+    .catch(function(err){
+        console.log(err.message);
+    });

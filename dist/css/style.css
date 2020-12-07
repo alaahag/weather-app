@@ -124,13 +124,50 @@ body {
       "add_remove name desc";
 }
 
-.update { grid-area: update; font-size: 90%; color: darkcyan; font-style: oblique; }
-.refresh { grid-area: refresh; font-size: 90%; padding-top: 9px; }
-.add_remove { grid-area: add_remove; font-size: 90%; align-self: end; padding-bottom: 8px; }
-.temp { grid-area: temp; font-size: 150%; color: rgb(142, 207, 37); }
-.name { grid-area: name; font-size: 150%; color: rgb(151, 191, 223); padding-left: 2px; padding-right: 2px; padding-bottom: 8px; }
-.pic { grid-area: pic; align-self: end; }
-.desc { grid-area: desc; color: slategray; }
+.update {
+    grid-area: update;
+    font-size: 90%;
+    color: darkcyan;
+    font-style: oblique;
+}
+
+.refresh {
+    grid-area: refresh;
+    font-size: 90%;
+    padding-top: 9px;
+}
+
+.add_remove {
+    grid-area: add_remove;
+    font-size: 90%;
+    align-self: end;
+    padding-bottom: 8px;
+}
+
+.temp {
+    grid-area: temp;
+    font-size: 150%;
+    color: rgb(142, 207, 37);
+}
+
+.name {
+    grid-area: name;
+    font-size: 150%;
+    color: rgb(151, 191, 223);
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 8px;
+}
+
+.pic {
+    grid-area: pic;
+    align-self: end;
+}
+
+.desc {
+    grid-area: desc;
+    color: slategray;
+}
 
 .image {
     height: 4em;
